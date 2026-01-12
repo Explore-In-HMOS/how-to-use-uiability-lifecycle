@@ -41,12 +41,15 @@ struct Index {
 
       Scroll() {
         Column() {
-          ForEach(this.logs, (item: string) => {
+          ForEach(
+            this.logs, (item: string) => {
             Text(item)
               .fontSize($r('app.float.small_font_size'))
               .fontColor(Color.Gray)
-              .margin({ bottom: ($r('app.float.margin_bottom')) })
-          })
+              .margin({ bottom: $r('app.float.margin_bottom') })
+          },
+            (item: string) => item
+          )
         }.padding($r('app.float.padding_small'))
       }.height('40%')
       .width('60%')
